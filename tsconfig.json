@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "ld48": ["src/app/*"],
+      "assets": ["src/assets/*"]
+    },
+    "types": ["node"],
+    "pretty": true,
+    "sourceMap": false,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressExcessPropertyErrors": true,
+    "preserveConstEnums": true,
+    "removeComments": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "files": [
+    "node_modules/phaser/typescript/phaser.comments.d.ts"
+  ],
+  "compileOnSave": false
+}

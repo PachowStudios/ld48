@@ -2,8 +2,8 @@ const path = require('path');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const root = path.resolve.bind(path, __dirname, '..');
-const phaserRoot = root.bind(path, 'node_modules/phaser/build/custom');
+const root = path.resolve.bind(path, __dirname);
+const phaserRoot = root.bind(path, 'node_modules/phaser-ce/build/custom');
 
 module.exports = ({
   host = process.env.DEV_HOST || 'localhost',
@@ -49,6 +49,13 @@ module.exports = ({
           loader: 'ts-loader',
         },
         {
+          test: /\.png$/,
+          loader: 'file-loader',
+          options: {
+            name: '[path][name]-[hash:6].[ext]'
+          },
+        },
+        {
           test: /phaser-split\.js$/,
           loader: 'expose-loader?Phaser',
         },
@@ -60,13 +67,6 @@ module.exports = ({
           test: /p2\.js$/,
           loader: 'expose-loader?p2',
         },
-        {
-          test: /\.png$/,
-          loader: 'file-loader',
-          options: {
-            name: '[path][name]-[hash:6].[ext]'
-          }
-        }
       ],
     },
     plugins: [

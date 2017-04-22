@@ -1,13 +1,10 @@
-import { Game, State } from "phaser";
-import { ScaledCanvasPlugin, GAME_SCALE } from "ld48";
-const logoImage = require('assets/phaser-logo-small.png');
+import { Game, State } from 'phaser';
+import { GAME_SCALE } from 'ld48';
+import { ScaledCanvasPlugin } from 'ld48/plugins';
+import { LoadState } from 'ld48/states';
 
 export class BootState extends State {
   static readonly id = 'BOOT_STATE';
-
-  preload() {
-    this.game.load.image('logo', logoImage);
-  }
 
   create() {
     function loadPlugins({ plugins }: Game) {
@@ -15,7 +12,7 @@ export class BootState extends State {
     }
 
     loadPlugins(this.game);
-    const logo = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'logo');
-    logo.anchor.setTo(0.5, 0.5);
+
+    this.state.start(LoadState.id);
   }
 }

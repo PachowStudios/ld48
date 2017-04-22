@@ -8,8 +8,10 @@
     "module": "commonjs",
     "baseUrl": ".",
     "paths": {
-      "ld48": ["src/app", "src/app/*"],
-      "assets": ["src/assets", "src/assets/*"]
+      "ld48": ["src/app"],
+      "ld48/*": ["src/app/*"],
+      "assets": ["src/assets"],
+      "assets/*": ["src/assets/*"]
     },
     "types": ["node"],
     "pretty": true,
@@ -27,10 +29,8 @@
     "removeComments": true
   },
   "include": [
-    "src/**/*.ts"
-  ],
-  "files": [
-    "node_modules/phaser/typescript/phaser.comments.d.ts"
+    "src/**/*.ts",
+    "typings/**/*.d.ts"
   ],
   "compileOnSave": false
 }

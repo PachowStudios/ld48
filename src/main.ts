@@ -1,24 +1,16 @@
-import { Game, AUTO } from 'phaser';
-const logo = require('assets/phaser-logo-small.png');
+import { Game } from 'phaser';
+import { GAME_CONFIG, BootState } from "ld48";
 
-class SimpleGame {
-  game: Game;
+start();
 
-  constructor() {
-    this.game = new Game(800, 600, AUTO, 'content', this);
-  }
+function start() {
+  const game = new Game(GAME_CONFIG);
 
-  preload() {
-    this.game.load.image('logo', logo);
-  }
+  loadStates(game);
 
-  create() {
-    let logo = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'logo');
-    logo.anchor.setTo(0.5, 0.5);
-  }
-
+  game.state.start(BootState.id);
 }
 
-window.onload = () => {
-  let game = new SimpleGame();
-};
+function loadStates(game: Game) {
+  game.state.add(BootState.id, BootState)
+}

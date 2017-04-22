@@ -49,7 +49,7 @@ module.exports = ({
           loader: 'ts-loader',
         },
         {
-          test: /pahser-split\.js$/,
+          test: /phaser-split\.js$/,
           loader: 'expose-loader?Phaser',
         },
         {

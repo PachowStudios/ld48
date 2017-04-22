@@ -8,8 +8,8 @@
     "module": "commonjs",
     "baseUrl": ".",
     "paths": {
-      "ld48": ["src/app/*"],
-      "assets": ["src/assets/*"]
+      "ld48": ["src/app", "src/app/*"],
+      "assets": ["src/assets", "src/assets/*"]
     },
     "types": ["node"],
     "pretty": true,
@@ -19,6 +19,7 @@
     "strictNullChecks": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "suppressExcessPropertyErrors": true,

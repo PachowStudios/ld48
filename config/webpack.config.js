@@ -6,7 +6,7 @@ const root = path.resolve.bind(path, __dirname, '..');
 const phaserRoot = root.bind(path, 'node_modules/phaser/build/custom');
 
 module.exports = ({
-  host = process.env.DEV_HOST || '127.0.0.1',
+  host = process.env.DEV_HOST || 'localhost',
   port = process.env.DEV_PORT || 92
 } = {}) => {
   return {

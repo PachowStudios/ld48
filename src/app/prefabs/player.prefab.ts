@@ -1,15 +1,15 @@
 import { CursorKeys } from 'phaser';
-import { Prefab, PrefabConfig } from 'ld48/prefabs';
+import { PhysicsPrefab, PrefabConfig } from 'ld48/prefabs';
 import { Vector2 } from 'ld48/primitives';
-import { LevelState } from 'ld48/states';
+import { TilemapState } from 'ld48/states';
 import { playerSpritesheet } from 'assets/player';
 
-export class PlayerPrefab extends Prefab {
+export class PlayerPrefab extends PhysicsPrefab {
   private readonly keys: CursorKeys;
 
   constructor(
     protected readonly config: PlayerPrefabConfig,
-    state: LevelState,
+    state: TilemapState,
     name: string,
     group: string,
     position: Vector2) {
@@ -39,8 +39,9 @@ export interface PlayerPrefabConfig extends PrefabConfig {
   speed: number;
 }
 
-export const playerPrefabConfig: PrefabConfig = {
+export const playerPrefabConfig: PlayerPrefabConfig = {
   constructor: PlayerPrefab,
   spritesheet: playerSpritesheet,
   anchorX: 0.6,
+  speed: 100,
 };

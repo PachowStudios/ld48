@@ -13,6 +13,7 @@ export class BootState extends State {
 
     loadPlugins(this.game);
 
+    this.game.renderer.renderSession.roundPixels = true;
     this.state.start(LoadState.key);
   }
 }

@@ -1,9 +1,9 @@
 import { Camera, Physics } from 'phaser';
-import { TilemapState } from 'ld38/states';
 import { PlayerPrefab } from 'ld38/prefabs';
+import { TilemapState } from './tilemap-state';
 
 export abstract class LevelState extends TilemapState {
-  protected get player(): PlayerPrefab {
+  get player(): PlayerPrefab {
     return this.prefabs.player as PlayerPrefab;
   }
 

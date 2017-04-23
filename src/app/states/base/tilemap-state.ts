@@ -1,10 +1,10 @@
+import * as _ from 'lodash';
 import { Dictionary, filter, keyBy, mapValues } from 'lodash';
 import { State, Group, TilemapLayer, Tilemap, GameObjectFactory, Physics } from 'phaser';
 import { TiledTilemap, TiledObjectLayer } from 'tiled';
 import { TilemapAsset, TilesetAsset } from 'assets';
 import { Vector2 } from 'ld38/primitives';
-import { prefabLookup, Prefab } from 'ld38/prefabs';
-import _ = require('lodash');
+import { PREFAB_LOOKUP, Prefab } from 'ld38/prefabs';
 
 export abstract class TilemapState extends State {
   map: Tilemap;
@@ -74,8 +74,8 @@ function createPrefabs(state: TilemapState, map: Tilemap): Dictionary<Prefab> {
 }
 
 function createPrefab(state: TilemapState, name: string, prefabType: string, group: string, position: Vector2): Prefab {
-  let config = prefabLookup[prefabType];
-
+  let config = PREFAB_LOOKUP[prefabType]();
+  
   if (!config) {
     throw new Error(`Prefab ${prefabType} isn't registered!`);
   }
@@ -90,5 +90,6 @@ function createPrefab(state: TilemapState, name: string, prefabType: string, gro
     y: position.y - config.spritesheet.frameHeight * (1 - config.anchorY),
   };
 
-  return new config.constructor(config, state, name, group, position);
+  return state.groups[group].add(
+    new config.constructor(config, state, name, position));
 }

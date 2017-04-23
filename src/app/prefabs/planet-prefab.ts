@@ -1,15 +1,41 @@
+import { Key, KeyCode } from "phaser";
 import { Vector2 } from 'ld38/primitives';
-import { Prefab, PlanetPrefabConfig } from 'ld38/prefabs';
-import { TilemapState } from 'ld38/states';
+import { PhysicsPrefab, PlanetPrefabConfig } from 'ld38/prefabs';
+import { LevelState, LoadState } from 'ld38/states';
 
-export class PlanetPrefab extends Prefab {
+export class PlanetPrefab extends PhysicsPrefab {
+  private get canActivate(): boolean {
+    return this.physics.overlap(this, this.state.player);
+  }
+
   constructor(
     protected readonly config: PlanetPrefabConfig,
-    state: TilemapState,
+    protected readonly state: LevelState,
     name: string,
-    group: string,
     position: Vector2) {
-    super(config, state, name, group, position);
+    super(config, state, name, position);
+  }
+
+  protected initSprite() {
+    super.initSprite();
     this.frame = this.config.frame;
+  }
+
+  protected initPhysics() {
+    super.initPhysics();
+    this.body.immovable = true;
+    this.body.allowGravity = false;
+  }
+
+  update() {
+    super.update();
+
+    if (this.canActivate) {
+      this.loadTargetState();
+    }
+  }
+
+  private loadTargetState() {
+    this.game.state.start(this.config.targetState);
   }
 }

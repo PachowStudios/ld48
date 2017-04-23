@@ -1,7 +1,9 @@
 import { Physics, Point } from 'phaser';
 import { Vector2 } from 'ld38/primitives';
-import { Prefab, PrefabConfig } from 'ld38/prefabs';
 import { TilemapState } from 'ld38/states';
+import { Prefab } from './prefab';
+import { PrefabConfig } from './prefab-config';
+
 import Arcade = Physics.Arcade;
 
 export class PhysicsPrefab extends Prefab {
@@ -19,21 +21,17 @@ export class PhysicsPrefab extends Prefab {
     config: PrefabConfig,
     state: TilemapState,
     name: string,
-    group: string,
     position: Vector2) {
-    super(config, state, name, group, position);
+    super(config, state, name, position);
     
-    this.state.groups[group].add(this);
     this.initPhysics();
   }
 
-  private initPhysics() {
+  protected initPhysics() {
     this.game.physics.arcade.enable(this);
-    this.body.collideWorldBounds = true;
   }
 
-  update() {
-    super.update();
-    this.state.collisionLayers.forEach(l => this.physics.collide(this, l));
+  protected collideWithWorld() {
+    this.physics.collide(this, this.state.collisionLayers);
   }
 }

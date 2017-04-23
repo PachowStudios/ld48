@@ -1,5 +1,5 @@
 import { SpritesheetAsset } from 'assets';
-import { Prefab } from 'ld38/prefabs';
+import { Prefab } from './prefab';
 
 export interface PrefabConfig {
   constructor: typeof Prefab;

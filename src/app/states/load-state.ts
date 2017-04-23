@@ -1,16 +1,23 @@
 import { State, Tilemap, Loader } from 'phaser';
 import { HubState, HUB_STATE } from 'ld38/states';
 import { TilemapAsset, SpritesheetAsset } from 'assets';
-import { hubMap, planetsSpritesheet } from 'assets/world';
+import { planetsSpritesheet, hubMap, frozenMap } from 'assets/world';
 import { playerSpritesheet } from 'assets/player';
 
-export const LOAD_STATE = 'LOAD_STATE';
+const SPRITESHEETS = [
+  playerSpritesheet,
+  planetsSpritesheet,
+];
+
+const TILEMAPS = [
+  hubMap,
+  frozenMap,
+];
 
 export class LoadState extends State {
   preload() {
-    loadSpritesheet(this.load, playerSpritesheet);
-    loadSpritesheet(this.load, planetsSpritesheet)
-    loadTilemap(this.load, hubMap);
+    SPRITESHEETS.forEach(a => loadSpritesheet(this.load, a));
+    TILEMAPS.forEach(a => loadTilemap(this.load, a));
   }
 
   create() {

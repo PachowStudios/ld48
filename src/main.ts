@@ -4,7 +4,7 @@ import { BOOT_STATE, BootState, HUB_STATE, HubState, LOAD_STATE, LoadState, EART
 
 window.onload = () => start();
 
-const STATES = {
+const STATE_LOOKUP = {
   [BOOT_STATE]: BootState,
   [LOAD_STATE]: LoadState,
   [HUB_STATE]: HubState,
@@ -17,8 +17,8 @@ const STATES = {
 function start() {
   const game = new Game(GAME_CONFIG);
 
-  for (const key in STATES) {
-    game.state.add(key, STATES[key]);
+  for (const key in STATE_LOOKUP) {
+    game.state.add(key, STATE_LOOKUP[key]);
   }
 
   game.state.start(BOOT_STATE);

@@ -5,7 +5,8 @@
       "dom",
       "es2015"
     ],
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
       "ld38": ["src/app"],

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="9" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="9" tilewidth="16" tileheight="16" nextobjectid="3">
  <tileset firstgid="1" name="frozen" tilewidth="16" tileheight="16" tilecount="64" columns="8">
   <image source="frozen.tileset.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="65" name="player" tilewidth="16" tileheight="16" tilecount="8" columns="8">
+  <image source="../player/penguin.png" width="128" height="16"/>
  </tileset>
  <layer name="background" width="100" height="9">
   <data encoding="csv">
@@ -58,4 +61,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup name="characters">
+  <object id="2" name="player" type="prefab" gid="65" x="48" y="112" width="16" height="16">
+   <properties>
+    <property name="prefabType" value="player"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

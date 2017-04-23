@@ -3,8 +3,6 @@ import { GAME_SCALE } from 'ld38';
 import { ScaledCanvasPlugin } from 'ld38/plugins';
 import { LoadState, LOAD_STATE } from 'ld38/states';
 
-export const BOOT_STATE = 'BOOT_STATE';
-
 export class BootState extends State {
   create() {
     function loadPlugins({ plugins }: Game) {

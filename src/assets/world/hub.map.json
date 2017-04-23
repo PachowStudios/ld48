@@ -46,17 +46,17 @@
         }, 
         {
          "draworder":"topdown",
-         "height":9,
+         "height":0,
          "name":"planets",
          "objects":[
                 {
-                 "gid":21,
+                 "gid":24,
                  "height":32,
-                 "id":13,
-                 "name":"earthPlanet",
+                 "id":18,
+                 "name":"junglePlanet",
                  "properties":
                     {
-                     "prefabType":"earthPlanet"
+                     "prefabType":"junglePlanet"
                     },
                  "propertytypes":
                     {
@@ -66,27 +66,7 @@
                  "type":"prefab",
                  "visible":true,
                  "width":32,
-                 "x":216,
-                 "y":96
-                }, 
-                {
-                 "gid":22,
-                 "height":32,
-                 "id":16,
-                 "name":"moltenPlanet",
-                 "properties":
-                    {
-                     "prefabType":"moltenPlanet"
-                    },
-                 "propertytypes":
-                    {
-                     "prefabType":"string"
-                    },
-                 "rotation":0,
-                 "type":"prefab",
-                 "visible":true,
-                 "width":32,
-                 "x":280,
+                 "x":408,
                  "y":96
                 }, 
                 {
@@ -110,13 +90,13 @@
                  "y":96
                 }, 
                 {
-                 "gid":24,
+                 "gid":22,
                  "height":32,
-                 "id":18,
-                 "name":"junglePlanet",
+                 "id":16,
+                 "name":"moltenPlanet",
                  "properties":
                     {
-                     "prefabType":"junglePlanet"
+                     "prefabType":"moltenPlanet"
                     },
                  "propertytypes":
                     {
@@ -126,19 +106,39 @@
                  "type":"prefab",
                  "visible":true,
                  "width":32,
-                 "x":408,
+                 "x":280,
+                 "y":96
+                }, 
+                {
+                 "gid":21,
+                 "height":32,
+                 "id":13,
+                 "name":"earthPlanet",
+                 "properties":
+                    {
+                     "prefabType":"earthPlanet"
+                    },
+                 "propertytypes":
+                    {
+                     "prefabType":"string"
+                    },
+                 "rotation":0,
+                 "type":"prefab",
+                 "visible":true,
+                 "width":32,
+                 "x":216,
                  "y":96
                 }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":32,
+         "width":0,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":10,
+         "height":0,
          "name":"characters",
          "objects":[
                 {
@@ -164,11 +164,11 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":32,
+         "width":0,
          "x":0,
          "y":0
         }],
- "nextobjectid":21,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tileheight":16,

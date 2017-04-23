@@ -5,33 +5,40 @@ import { TilemapState } from 'ld38/states';
 import { playerSpritesheet } from 'assets/player';
 
 export class PlayerPrefab extends PhysicsPrefab {
-  private readonly keys: {
+  readonly keys: {
     left: Key,
     right: Key,
     jump: Key,
+    interact: Key,
   };
 
   constructor(
     protected readonly config: PlayerPrefabConfig,
     state: TilemapState,
     name: string,
-    group: string,
     position: Vector2) {
-    super(config, state, name, group, position);
-    
+    super(config, state, name, position);
+
     this.keys = this.game.input.keyboard.addKeys({
       left: KeyCode.LEFT,
       right: KeyCode.RIGHT,
       jump: KeyCode.SPACEBAR,
+      interact: KeyCode.SPACEBAR,
     });
+  }
+
+  protected initPhysics() {
+    super.initPhysics();
+    this.body.collideWorldBounds = true;
   }
 
   update() {
     super.update();
-    this.updateInput();
+    this.collideWithWorld();
+    this.checkInput();
   }
 
-  private updateInput() {
+  private checkInput() {
     if (this.keys.left.isDown && this.velocity.x <= 0) {
       this.velocity.x = -this.config.speed;
       this.scale.set(-1, 1);
@@ -41,6 +48,7 @@ export class PlayerPrefab extends PhysicsPrefab {
     } else {
       this.velocity.x = 0;
     }
+
     if (this.keys.jump.justDown && this.body.blocked.down) {
       this.body.velocity.y = -this.config.jumpSpeed;
     }

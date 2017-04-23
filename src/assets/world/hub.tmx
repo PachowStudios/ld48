@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="9" tilewidth="16" tileheight="16" nextobjectid="21">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="9" tilewidth="16" tileheight="16" nextobjectid="22">
  <tileset firstgid="1" name="hub" tilewidth="16" tileheight="16" tilecount="20" columns="5">
   <image source="hub.tileset.png" width="80" height="64"/>
  </tileset>
@@ -28,14 +28,9 @@
   </data>
  </layer>
  <objectgroup name="planets">
-  <object id="13" name="earthPlanet" type="prefab" gid="21" x="216" y="96" width="32" height="32">
+  <object id="18" name="junglePlanet" type="prefab" gid="24" x="408" y="96" width="32" height="32">
    <properties>
-    <property name="prefabType" value="earthPlanet"/>
-   </properties>
-  </object>
-  <object id="16" name="moltenPlanet" type="prefab" gid="22" x="280" y="96" width="32" height="32">
-   <properties>
-    <property name="prefabType" value="moltenPlanet"/>
+    <property name="prefabType" value="junglePlanet"/>
    </properties>
   </object>
   <object id="17" name="fozenPlanet" type="prefab" gid="23" x="344" y="96" width="32" height="32">
@@ -43,9 +38,14 @@
     <property name="prefabType" value="frozenPlanet"/>
    </properties>
   </object>
-  <object id="18" name="junglePlanet" type="prefab" gid="24" x="408" y="96" width="32" height="32">
+  <object id="16" name="moltenPlanet" type="prefab" gid="22" x="280" y="96" width="32" height="32">
    <properties>
-    <property name="prefabType" value="junglePlanet"/>
+    <property name="prefabType" value="moltenPlanet"/>
+   </properties>
+  </object>
+  <object id="13" name="earthPlanet" type="prefab" gid="21" x="216" y="96" width="32" height="32">
+   <properties>
+    <property name="prefabType" value="earthPlanet"/>
    </properties>
   </object>
  </objectgroup>

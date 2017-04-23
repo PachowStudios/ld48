@@ -7,31 +7,31 @@ export interface PlanetPrefabConfig extends PrefabConfig {
   frame: number;
 }
 
-const planetPrefabConfig: PrefabConfig = {
+const planetPrefabConfig = () => <PrefabConfig>({
   constructor: PlanetPrefab,
   spritesheet: planetsSpritesheet,
-};
+});
 
-export const earthPlanetPrefabConfig: PlanetPrefabConfig = {
-  ...planetPrefabConfig,
+export const earthPlanetPrefabConfig = () => <PlanetPrefabConfig>({
+  ...planetPrefabConfig(),
   targetState: EARTH_WORLD_STATE,
   frame: 0,
-};
+});
 
-export const moltenPlanetPrefabConfig: PlanetPrefabConfig = {
-  ...planetPrefabConfig,
+export const moltenPlanetPrefabConfig = () => <PlanetPrefabConfig>({
+  ...planetPrefabConfig(),
   targetState: MOLTEN_WORLD_STATE,
   frame: 1,
-};
+});
 
-export const frozenPlanetPrefabConfig: PlanetPrefabConfig = {
-  ...planetPrefabConfig,
+export const frozenPlanetPrefabConfig = () => <PlanetPrefabConfig>({
+  ...planetPrefabConfig(),
   targetState: FROZEN_WORLD_STATE,
   frame: 2,
-};
+});
 
-export const junglePlanetPrefabConfig: PlanetPrefabConfig = {
-  ...planetPrefabConfig,
+export const junglePlanetPrefabConfig = () => <PlanetPrefabConfig>({
+  ...planetPrefabConfig(),
   targetState: JUNGLE_WORLD_STATE,
   frame: 3,
-};
+});

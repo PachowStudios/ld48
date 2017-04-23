@@ -1,7 +1,7 @@
 import { Sprite } from 'phaser';
-import { Vector2 } from 'ld48/primitives';
-import { PrefabConfig } from 'ld48/prefabs';
-import { TilemapState } from 'ld48/states';
+import { Vector2 } from 'ld38/primitives';
+import { PrefabConfig } from 'ld38/prefabs';
+import { TilemapState } from 'ld38/states';
 
 export class Prefab extends Sprite {
   constructor(

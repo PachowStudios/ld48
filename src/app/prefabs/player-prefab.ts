@@ -1,7 +1,7 @@
 import { CursorKeys, Key, KeyCode } from 'phaser';
-import { Vector2 } from 'ld48/primitives';
-import { PhysicsPrefab, PrefabConfig } from 'ld48/prefabs';
-import { TilemapState } from 'ld48/states';
+import { Vector2 } from 'ld38/primitives';
+import { PhysicsPrefab, PrefabConfig } from 'ld38/prefabs';
+import { TilemapState } from 'ld38/states';
 import { playerSpritesheet } from 'assets/player';
 
 export interface PlayerPrefabConfig extends PrefabConfig {

@@ -1,4 +1,4 @@
-import { PlayerPrefabConfig, PlayerPrefab } from "ld48/prefabs";
+import { PlayerPrefabConfig, PlayerPrefab } from "ld38/prefabs";
 import { playerSpritesheet } from "assets/player";
 
 export const playerPrefabConfig: PlayerPrefabConfig = {

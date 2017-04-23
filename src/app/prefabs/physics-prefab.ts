@@ -1,7 +1,7 @@
 import { Physics, Point } from 'phaser';
-import { Vector2 } from 'ld48/primitives';
-import { Prefab, PrefabConfig } from 'ld48/prefabs';
-import { TilemapState } from 'ld48/states';
+import { Vector2 } from 'ld38/primitives';
+import { Prefab, PrefabConfig } from 'ld38/prefabs';
+import { TilemapState } from 'ld38/states';
 import Arcade = Physics.Arcade;
 
 export class PhysicsPrefab extends Prefab {

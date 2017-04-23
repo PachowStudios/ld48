@@ -1,7 +1,7 @@
 import { Game, State } from 'phaser';
-import { GAME_SCALE } from 'ld48';
-import { ScaledCanvasPlugin } from 'ld48/plugins';
-import { LoadState, LOAD_STATE } from 'ld48/states';
+import { GAME_SCALE } from 'ld38';
+import { ScaledCanvasPlugin } from 'ld38/plugins';
+import { LoadState, LOAD_STATE } from 'ld38/states';
 
 export const BOOT_STATE = 'BOOT_STATE';
 

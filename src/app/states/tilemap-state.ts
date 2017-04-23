@@ -2,8 +2,8 @@ import { Dictionary, filter, keyBy, mapValues } from 'lodash';
 import { State, Group, TilemapLayer, Tilemap, GameObjectFactory, Physics } from 'phaser';
 import { TiledTilemap, TiledObjectLayer } from 'tiled';
 import { TilemapAsset, TilesetAsset } from 'assets';
-import { Vector2 } from 'ld48/primitives';
-import { prefabLookup, Prefab } from 'ld48/prefabs';
+import { Vector2 } from 'ld38/primitives';
+import { prefabLookup, Prefab } from 'ld38/prefabs';
 import _ = require('lodash');
 
 export abstract class TilemapState extends State {

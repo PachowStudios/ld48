@@ -1,5 +1,5 @@
 import { State, Tilemap, Loader } from 'phaser';
-import { HubState, HUB_STATE } from 'ld48/states';
+import { HubState, HUB_STATE } from 'ld38/states';
 import { TilemapAsset, SpritesheetAsset } from 'assets';
 import { hubMap, planetsSpritesheet } from 'assets/world';
 import { playerSpritesheet } from 'assets/player';

@@ -1,6 +1,6 @@
-import { TilemapData } from 'tiled';
+import { TiledTilemap } from 'tiled';
 import { JsonAsset, TilesetAsset } from 'assets';
 
-export interface TilemapAsset extends JsonAsset<TilemapData> {
+export interface TilemapAsset extends JsonAsset<TiledTilemap> {
   tilesets: TilesetAsset[];
 }

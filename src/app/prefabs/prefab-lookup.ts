@@ -1,5 +1,5 @@
 import { Dictionary } from 'lodash';
-import { Prefab, PrefabConfig, playerPrefabConfig, earthPlanetPrefabConfig, moltenPlanetPrefabConfig, frozenPlanetPrefabConfig, junglePlanetPrefabConfig } from 'ld48/prefabs';
+import { Prefab, PrefabConfig, playerPrefabConfig, earthPlanetPrefabConfig, moltenPlanetPrefabConfig, frozenPlanetPrefabConfig, junglePlanetPrefabConfig } from 'ld38/prefabs';
 import { playerSpritesheet } from 'assets/player';
 
 export const prefabLookup: Dictionary<PrefabConfig> = {

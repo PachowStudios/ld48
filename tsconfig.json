@@ -8,8 +8,8 @@
     "module": "commonjs",
     "baseUrl": ".",
     "paths": {
-      "ld48": ["src/app"],
-      "ld48/*": ["src/app/*"],
+      "ld38": ["src/app"],
+      "ld38/*": ["src/app/*"],
       "assets": ["src/assets"],
       "assets/*": ["src/assets/*"]
     },

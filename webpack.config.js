@@ -34,7 +34,7 @@ module.exports = ({
         'node_modules',
       ],
       alias: {
-        ld48: root('src/app'),
+        ld38: root('src/app'),
         assets: root('src/assets'),
         phaser: phaserRoot('phaser-split.js'),
         pixi: phaserRoot('pixi.js'),

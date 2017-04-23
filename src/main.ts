@@ -1,7 +1,6 @@
 import { Game } from 'phaser';
-import { GAME_CONFIG } from "ld48";
-import { BootState, LoadState } from "ld48/states";
-import { HubState } from "ld48/states/hub-state";
+import { GAME_CONFIG } from 'ld48';
+import { BootState, LoadState, HubState } from 'ld48/states';
 
 window.onload = () => start();
 

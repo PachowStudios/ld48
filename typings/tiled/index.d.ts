@@ -18,9 +18,9 @@ declare module 'tiled' {
     height: number;
     opacity: number;
     visible: boolean;
-    properties: object;
-    propertytypes: { [name: string]: string };
     data: number[];
+    properties?: any;
+    propertytypes?: { [name: string]: string };
   }
 
   export interface TilesetData {

@@ -1,29 +1,16 @@
-import { State, Tilemap, ScaleManager } from 'phaser';
-import { TilemapData } from 'tiled';
+import { State, Tilemap, ScaleManager, Tile, TilemapLayer } from 'phaser';
+import { LevelState } from 'ld48/states';
+import { TilemapAsset, TilesetAsset } from 'assets';
 import { caveMap, caveTileset } from 'assets/world';
 
-export class HubState extends State {
+export class HubState extends LevelState {
   static readonly id = 'HUB_STATE';
 
-  private map: Tilemap;
-  
-  init() {
-    this.map = this.addMap();
+  protected get tilemap(): TilemapAsset {
+    return caveMap;
   }
 
-  private addMap(): Tilemap {
-    const map = this.add.tilemap(caveMap.key);
-    map.addTilesetImage(caveTileset.name, caveTileset.key);
-
-    return map;
+  protected get tilesets(): TilesetAsset[] {
+    return [caveTileset];
   }
-
-  create() {
-    populateMapLayers(this.map, caveMap.data);
-  }
-}
-
-function populateMapLayers(map: Tilemap, { layers }: TilemapData) {
-  layers.map(layer => map.createLayer(layer.name)).forEach(layer => {
-  })
 }

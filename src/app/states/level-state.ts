@@ -8,7 +8,7 @@ export abstract class LevelState extends TilemapState {
   }
 
   init() {
-    this.physics.arcade.gravity.y = 100;
+    this.physics.arcade.gravity.y = 1000;
   }
 
   create() {

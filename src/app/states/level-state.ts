@@ -26,7 +26,7 @@ export abstract class LevelState extends State {
 
 function createMap(factory: GameObjectFactory, tilemap: TilemapAsset, tilesets: TilesetAsset[]): Tilemap {
   const map = factory.tilemap(tilemap.key);
-
+  
   tilesets.forEach(t => map.addTilesetImage(t.name, t.key));
 
   return map;

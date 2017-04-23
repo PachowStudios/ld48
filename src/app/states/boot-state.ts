@@ -4,7 +4,7 @@ import { ScaledCanvasPlugin } from 'ld48/plugins';
 import { LoadState } from 'ld48/states';
 
 export class BootState extends State {
-  static readonly id = 'BOOT_STATE';
+  static readonly key = 'BOOT_STATE';
 
   create() {
     function loadPlugins({ plugins }: Game) {
@@ -13,6 +13,6 @@ export class BootState extends State {
 
     loadPlugins(this.game);
 
-    this.state.start(LoadState.id);
+    this.state.start(LoadState.key);
   }
 }

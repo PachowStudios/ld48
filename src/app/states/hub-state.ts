@@ -1,16 +1,16 @@
 import { State, Tilemap, ScaleManager, Tile, TilemapLayer } from 'phaser';
 import { LevelState } from 'ld48/states';
 import { TilemapAsset, TilesetAsset } from 'assets';
-import { caveMap, caveTileset } from 'assets/world';
+import { hubMap, hubTileset, planetsTileset } from 'assets/world';
 
 export class HubState extends LevelState {
-  static readonly id = 'HUB_STATE';
+  static readonly key = 'HUB_STATE';
 
   protected get tilemap(): TilemapAsset {
-    return caveMap;
+    return hubMap;
   }
 
   protected get tilesets(): TilesetAsset[] {
-    return [caveTileset];
+    return [hubTileset, planetsTileset];
   }
 }

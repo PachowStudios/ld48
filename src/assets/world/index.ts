@@ -1,12 +1,18 @@
 import { TilesetAsset, TilemapAsset } from 'assets';
 
-export const caveTileset: TilesetAsset = {
-  key: 'CAVE_TILESET',
-  name: 'cave',
-  url: require('./cave.tileset.png'),
+export const hubMap: TilemapAsset = {
+  key: 'HUB_MAP',
+  data: require('./hub.map.json'),
 };
 
-export const caveMap: TilemapAsset = {
-  key: 'CAVE_MAP',
-  data: require('./cave.map.json'),
+export const hubTileset: TilesetAsset = {
+  key: 'HUB_TILESET',
+  name: 'hub',
+  url: require('./hub.tileset.png'),
+};
+
+export const planetsTileset: TilesetAsset = {
+  key: 'PLANETS_TILESET',
+  name: 'planets',
+  url: require('./planets.png'),
 };

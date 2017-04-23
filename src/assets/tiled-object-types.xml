@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="prefab" color="#a0a0a4">
+  <property name="prefabType" type="string"/>
+ </objecttype>
+</objecttypes>

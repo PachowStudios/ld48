@@ -1,4 +1,5 @@
 export * from './prefab';
-export * from './prefab-properties';
+export * from './prefab-config';
+export * from './prefab-tags';
 export * from './player.prefab';
-export * from './prefab-types';
+export * from './prefab-lookup';

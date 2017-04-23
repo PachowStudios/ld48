@@ -21,6 +21,7 @@
     "strictNullChecks": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,

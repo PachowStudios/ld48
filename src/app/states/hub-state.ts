@@ -9,8 +9,4 @@ export class HubState extends LevelState {
   protected get tilemap(): TilemapAsset {
     return hubMap;
   }
-
-  protected get tilesets(): TilesetAsset[] {
-    return [hubTileset, planetsTileset];
-  }
 }

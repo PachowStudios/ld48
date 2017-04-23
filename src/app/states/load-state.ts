@@ -1,19 +1,20 @@
 import { State, Tilemap, Loader } from 'phaser';
-import { HubState } from 'ld48/states';
+import { HubState, HUB_STATE } from 'ld48/states';
 import { TilemapAsset, SpritesheetAsset } from 'assets';
-import { hubMap } from 'assets/world';
+import { hubMap, planetsSpritesheet } from 'assets/world';
 import { playerSpritesheet } from 'assets/player';
 
-export class LoadState extends State {
-  static readonly key = 'LOAD_STATE';
+export const LOAD_STATE = 'LOAD_STATE';
 
+export class LoadState extends State {
   preload() {
     loadSpritesheet(this.load, playerSpritesheet);
+    loadSpritesheet(this.load, planetsSpritesheet)
     loadTilemap(this.load, hubMap);
   }
 
   create() {
-    this.state.start(HubState.key);
+    this.state.start(HUB_STATE);
   }
 }
 

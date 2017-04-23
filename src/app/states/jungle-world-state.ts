@@ -4,10 +4,10 @@ import { hubMap } from 'assets/world';
 import { LevelState } from 'ld48/states';
 import { Prefab, PlayerPrefab } from 'ld48/prefabs';
 
-export const HUB_STATE = 'HUB_STATE';
+export const JUNGLE_WORLD_STATE = 'JUNGLE_WORLD_STATE';
 
-export class HubState extends LevelState {
+export class JungleWorldState extends LevelState {
   constructor() {
-    super(hubMap);
+    super(null);
   }
 }

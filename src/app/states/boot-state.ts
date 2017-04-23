@@ -1,11 +1,11 @@
 import { Game, State } from 'phaser';
 import { GAME_SCALE } from 'ld48';
 import { ScaledCanvasPlugin } from 'ld48/plugins';
-import { LoadState } from 'ld48/states';
+import { LoadState, LOAD_STATE } from 'ld48/states';
+
+export const BOOT_STATE = 'BOOT_STATE';
 
 export class BootState extends State {
-  static readonly key = 'BOOT_STATE';
-
   create() {
     function loadPlugins({ plugins }: Game) {
       plugins.add(ScaledCanvasPlugin, GAME_SCALE)
@@ -14,6 +14,6 @@ export class BootState extends State {
     loadPlugins(this.game);
 
     this.game.renderer.renderSession.roundPixels = true;
-    this.state.start(LoadState.key);
+    this.state.start(LOAD_STATE);
   }
 }

@@ -22,6 +22,7 @@ export class PhysicsPrefab extends Prefab {
     group: string,
     position: Vector2) {
     super(config, state, name, group, position);
+    
     this.state.groups[group].add(this);
     this.initPhysics();
   }

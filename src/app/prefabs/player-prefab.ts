@@ -1,8 +1,12 @@
 import { CursorKeys, Key, KeyCode } from 'phaser';
-import { PhysicsPrefab, PrefabConfig } from 'ld48/prefabs';
 import { Vector2 } from 'ld48/primitives';
+import { PhysicsPrefab, PrefabConfig } from 'ld48/prefabs';
 import { TilemapState } from 'ld48/states';
 import { playerSpritesheet } from 'assets/player';
+
+export interface PlayerPrefabConfig extends PrefabConfig {
+  speed: number;
+}
 
 export class PlayerPrefab extends PhysicsPrefab {
   private readonly keys: {
@@ -18,6 +22,7 @@ export class PlayerPrefab extends PhysicsPrefab {
     group: string,
     position: Vector2) {
     super(config, state, name, group, position);
+    
     this.keys = this.game.input.keyboard.addKeys({
       left: KeyCode.LEFT,
       right: KeyCode.RIGHT,
@@ -45,14 +50,3 @@ export class PlayerPrefab extends PhysicsPrefab {
     }
   }
 }
-
-export interface PlayerPrefabConfig extends PrefabConfig {
-  speed: number;
-}
-
-export const playerPrefabConfig: PlayerPrefabConfig = {
-  constructor: PlayerPrefab,
-  spritesheet: playerSpritesheet,
-  anchorX: 0.6,
-  speed: 110,
-};

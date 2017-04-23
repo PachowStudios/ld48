@@ -13,7 +13,7 @@
          "y":0
         }, 
         {
-         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAMAAAACAAAAAwAAAAAAAAAAAAAACQAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEQAAABIAAAAAAAAAAAAAAAAAAAAdAAAAHgAAAAAAAAAAAAAAAAAAABkAAAAaAAAAAAAAAAAAAAAAAAAAFQAAABYAAAAAAAAAAAAAAAAAAAAEAAAABQAAAAQAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsAAAATAAAAFAAAAAsAAAAAAAAACwAAAB8AAAAgAAAACwAAAAAAAAALAAAAGwAAABwAAAALAAAAAQAAAAsAAAAXAAAAGAAAAAsAAAAAAAAAAAAAAAYAAAAHAAAABgAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAA0AAAAOAAAADAAAAAAAAAAMAAAADQAAAA4AAAAMAAAAAAAAAAwAAAANAAAADgAAAAwAAAAAAAAADAAAAA0AAAAOAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAcAAAAGAAAABwAAAAAAAAAAAAAABAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAAAADAAAAAsAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAABAAAAARAAAAEAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAAAJAAAAAAAAAA0AAAAAAAAACQAAAA4AAAANAAAAAAAAAAkAAAAAAAAADQAAAAAAAAAJAAAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
          "encoding":"base64",
          "height":9,
          "name":"backgroundItems",
@@ -46,11 +46,103 @@
         }, 
         {
          "draworder":"topdown",
+         "height":9,
+         "name":"planets",
+         "objects":[
+                {
+                 "gid":21,
+                 "height":32,
+                 "id":13,
+                 "name":"earthPlanet",
+                 "properties":
+                    {
+                     "prefabType":"earthPlanet"
+                    },
+                 "propertytypes":
+                    {
+                     "prefabType":"string"
+                    },
+                 "rotation":0,
+                 "type":"prefab",
+                 "visible":true,
+                 "width":32,
+                 "x":216,
+                 "y":96
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":16,
+                 "name":"moltenPlanet",
+                 "properties":
+                    {
+                     "prefabType":"moltenPlanet"
+                    },
+                 "propertytypes":
+                    {
+                     "prefabType":"string"
+                    },
+                 "rotation":0,
+                 "type":"prefab",
+                 "visible":true,
+                 "width":32,
+                 "x":280,
+                 "y":96
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":17,
+                 "name":"fozenPlanet",
+                 "properties":
+                    {
+                     "prefabType":"frozenPlanet"
+                    },
+                 "propertytypes":
+                    {
+                     "prefabType":"string"
+                    },
+                 "rotation":0,
+                 "type":"prefab",
+                 "visible":true,
+                 "width":32,
+                 "x":344,
+                 "y":96
+                }, 
+                {
+                 "gid":24,
+                 "height":32,
+                 "id":18,
+                 "name":"junglePlanet",
+                 "properties":
+                    {
+                     "prefabType":"junglePlanet"
+                    },
+                 "propertytypes":
+                    {
+                     "prefabType":"string"
+                    },
+                 "rotation":0,
+                 "type":"prefab",
+                 "visible":true,
+                 "width":32,
+                 "x":408,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":32,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "height":10,
          "name":"characters",
          "objects":[
                 {
-                 "gid":33,
+                 "gid":25,
                  "height":16,
                  "id":6,
                  "name":"player",
@@ -76,40 +168,40 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":11,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tileheight":16,
  "tilesets":[
         {
-         "columns":8,
+         "columns":5,
          "firstgid":1,
          "image":"hub.tileset.png",
-         "imageheight":32,
-         "imagewidth":128,
+         "imageheight":64,
+         "imagewidth":80,
          "margin":0,
          "name":"hub",
          "spacing":0,
-         "tilecount":16,
+         "tilecount":20,
          "tileheight":16,
          "tilewidth":16
         }, 
         {
-         "columns":8,
-         "firstgid":17,
+         "columns":4,
+         "firstgid":21,
          "image":"planets.png",
          "imageheight":32,
          "imagewidth":128,
          "margin":0,
          "name":"planets",
          "spacing":0,
-         "tilecount":16,
-         "tileheight":16,
-         "tilewidth":16
+         "tilecount":4,
+         "tileheight":32,
+         "tilewidth":32
         }, 
         {
          "columns":8,
-         "firstgid":33,
+         "firstgid":25,
          "image":"..\/player\/penguin.png",
          "imageheight":16,
          "imagewidth":128,

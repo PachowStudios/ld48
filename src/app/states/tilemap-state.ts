@@ -17,10 +17,6 @@ export abstract class TilemapState extends State {
     super();
   }
 
-  init() {
-    this.physics.startSystem(Physics.ARCADE);
-  }
-
   create() {
     populateMapObjectProperties(this.tilemap.data);
     this.map = createMap(this.add, this.tilemap);

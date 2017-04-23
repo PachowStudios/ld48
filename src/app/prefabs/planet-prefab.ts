@@ -1,12 +1,6 @@
 import { Vector2 } from 'ld38/primitives';
-import { Prefab, PrefabConfig } from 'ld38/prefabs';
-import { TilemapState, EARTH_WORLD_STATE, MOLTEN_WORLD_STATE, FROZEN_WORLD_STATE, JUNGLE_WORLD_STATE } from 'ld38/states';
-import { planetsSpritesheet } from 'assets/world';
-
-export interface PlanetPrefabConfig extends PrefabConfig {
-  targetState: string;
-  frame: number;
-}
+import { Prefab, PlanetPrefabConfig } from 'ld38/prefabs';
+import { TilemapState } from 'ld38/states';
 
 export class PlanetPrefab extends Prefab {
   constructor(

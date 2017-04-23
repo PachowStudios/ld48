@@ -1,6 +1,11 @@
-import { PrefabConfig, PlanetPrefab, PlanetPrefabConfig } from "ld38/prefabs";
+import { PrefabConfig, PlanetPrefab } from "ld38/prefabs";
 import { planetsSpritesheet } from "assets/world";
 import { EARTH_WORLD_STATE, MOLTEN_WORLD_STATE, FROZEN_WORLD_STATE, JUNGLE_WORLD_STATE } from "ld38/states";
+
+export interface PlanetPrefabConfig extends PrefabConfig {
+  targetState: string;
+  frame: number;
+}
 
 const planetPrefabConfig: PrefabConfig = {
   constructor: PlanetPrefab,

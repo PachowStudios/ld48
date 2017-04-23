@@ -1,12 +1,8 @@
 import { CursorKeys, Key, KeyCode } from 'phaser';
 import { Vector2 } from 'ld38/primitives';
-import { PhysicsPrefab, PrefabConfig } from 'ld38/prefabs';
+import { PhysicsPrefab, PlayerPrefabConfig } from 'ld38/prefabs';
 import { TilemapState } from 'ld38/states';
 import { playerSpritesheet } from 'assets/player';
-
-export interface PlayerPrefabConfig extends PrefabConfig {
-  speed: number;
-}
 
 export class PlayerPrefab extends PhysicsPrefab {
   private readonly keys: {
@@ -46,7 +42,7 @@ export class PlayerPrefab extends PhysicsPrefab {
       this.velocity.x = 0;
     }
     if (this.keys.jump.justDown && this.body.blocked.down) {
-      this.body.velocity.y = -350;
+      this.body.velocity.y = -this.config.jumpSpeed;
     }
   }
 }

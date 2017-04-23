@@ -1,4 +1,4 @@
-import { Camera } from 'phaser';
+import { Camera, Physics } from 'phaser';
 import { TilemapState } from 'ld38/states';
 import { PlayerPrefab } from 'ld38/prefabs';
 
@@ -8,6 +8,7 @@ export abstract class LevelState extends TilemapState {
   }
 
   init() {
+    this.physics.startSystem(Physics.ARCADE);
     this.physics.arcade.gravity.y = 1000;
   }
 

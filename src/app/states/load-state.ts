@@ -3,10 +3,12 @@ import { HubState, HUB_STATE } from 'ld38/states';
 import { TilemapAsset, SpritesheetAsset } from 'assets';
 import { planetsSpritesheet, hubMap, frozenMap } from 'assets/world';
 import { playerSpritesheet } from 'assets/player';
+import { iceSpikesSpritesheet } from "assets/hazards";
 
 const SPRITESHEETS = [
   playerSpritesheet,
   planetsSpritesheet,
+  iceSpikesSpritesheet,
 ];
 
 const TILEMAPS = [

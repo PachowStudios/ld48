@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Dictionary, filter, keyBy, mapValues } from 'lodash';
+import { Dictionary } from 'lodash';
 import { State, Group, TilemapLayer, Tilemap, GameObjectFactory, Physics } from 'phaser';
 import { TiledTilemap, TiledObjectLayer } from 'tiled';
 import { TilemapAsset, TilesetAsset } from 'assets';
@@ -21,7 +21,7 @@ export abstract class TilemapState extends State {
     populateMapObjectProperties(this.tilemap.data);
     this.map = createMap(this.add, this.tilemap);
     this.layers = createMapLayers(this.map);
-    this.collisionLayers = filter(this.layers, (l: any) => l.layer.properties.collision);
+    this.collisionLayers = _.filter(this.layers, (l: any) => l.layer.properties.collider);
     this.groups = createMapGroups(this.add, this.map);
     this.prefabs = createPrefabs(this, this.map);
   }
@@ -45,21 +45,21 @@ function createMap(factory: GameObjectFactory, tilemap: TilemapAsset): Tilemap {
 }
 
 function createMapLayers(map: Tilemap): Dictionary<TilemapLayer> {
-  const layerData = keyBy(map.layers, l => l.name);
+  const layerData = _.keyBy(map.layers, l => l.name);
 
-  filter(layerData, l => l.properties.collision)
+  _.filter(layerData, l => l.properties.collider || l.properties.trigger)
     .forEach(l => map.setCollisionByExclusion([-1], true, l.name))
 
-  const layers = mapValues(layerData, l => map.createLayer(l.name));
+  const layers = _.mapValues(layerData, l => map.createLayer(l.name));
   layers[(<any>map.layer).name].resizeWorld();
-  
+
   return layers;
 }
 
 function createMapGroups(factory: GameObjectFactory, map: Tilemap): Dictionary<Group> {
   const objectLayers: Dictionary<any[]> = <any>map.objects;
 
-  return mapValues(objectLayers, (_, name) => factory.group(undefined, name));
+  return _.mapValues(objectLayers, (_, name) => factory.group(undefined, name));
 }
 
 function createPrefabs(state: TilemapState, map: Tilemap): Dictionary<Prefab> {
@@ -68,22 +68,22 @@ function createPrefabs(state: TilemapState, map: Tilemap): Dictionary<Prefab> {
   return _(objectLayers)
     .flatMap<any>()
     .filter(o => o.type === 'prefab')
-    .keyBy(o => o.name)
-    .mapValues((o: any) => createPrefab(state, o.name, o.properties.prefabType, o.properties.group, o))
+    .map((o: any) => createPrefab(state, o.name, o.properties.prefabType, o.properties.group, o))
+    .keyBy(p => p.name || `${p.x}_${p.y}`)
     .value();
 }
 
 function createPrefab(state: TilemapState, name: string, prefabType: string, group: string, position: Vector2): Prefab {
-  let config = PREFAB_LOOKUP[prefabType]();
-  
-  if (!config) {
+  const configGetter = PREFAB_LOOKUP[prefabType];
+
+  if (!configGetter) {
     throw new Error(`Prefab ${prefabType} isn't registered!`);
   }
 
-  config = {
+  const config = {
     anchorX: 0.5,
     anchorY: 0.5,
-    ...config,
+    ...configGetter(),
   };
   position = {
     x: position.x + config.spritesheet.frameWidth * config.anchorX,

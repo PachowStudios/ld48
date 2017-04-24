@@ -16,15 +16,8 @@ export class PlanetPrefab extends PhysicsPrefab {
     super(config, state, name, position);
   }
 
-  protected initSprite() {
-    super.initSprite();
-    this.frame = this.config.frame;
-  }
-
   protected initPhysics() {
-    super.initPhysics();
-    this.body.immovable = true;
-    this.body.allowGravity = false;
+    super.initPhysics(true);
   }
 
   update() {

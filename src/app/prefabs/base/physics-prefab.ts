@@ -23,12 +23,17 @@ export class PhysicsPrefab extends Prefab {
     name: string,
     position: Vector2) {
     super(config, state, name, position);
-    
+
     this.initPhysics();
   }
 
-  protected initPhysics() {
+  protected initPhysics(isStatic = false) {
     this.game.physics.arcade.enable(this);
+
+    if (isStatic) {
+      this.body.immovable = true;
+      this.body.allowGravity = false;
+    }
   }
 
   protected collideWithWorld() {

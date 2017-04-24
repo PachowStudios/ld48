@@ -1,4 +1,5 @@
-import { Camera, Physics } from 'phaser';
+import * as _ from 'lodash';
+import { Camera, Physics, TilemapLayer } from 'phaser';
 import { PlayerPrefab } from 'ld38/prefabs';
 import { TilemapState } from './tilemap-state';
 
@@ -14,6 +15,6 @@ export abstract class LevelState extends TilemapState {
 
   create() {
     super.create();
-    this.camera.follow(this.player, Camera.FOLLOW_PLATFORMER);
+    this.camera.follow(this.player, Camera.FOLLOW_PLATFORMER, 0.25, 0.25);
   }
 }

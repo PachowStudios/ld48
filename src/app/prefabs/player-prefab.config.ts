@@ -6,7 +6,7 @@ export interface PlayerPrefabConfig extends PrefabConfig {
   jumpSpeed: number;
 }
 
-export const playerPrefabConfig = () => <PlayerPrefabConfig>({
+export const player = () => <PlayerPrefabConfig>({
   constructor: PlayerPrefab,
   spritesheet: playerSpritesheet,
   anchorX: 0.6,

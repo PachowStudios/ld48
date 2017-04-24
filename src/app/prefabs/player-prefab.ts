@@ -1,7 +1,8 @@
+import * as _ from 'lodash';
 import { CursorKeys, Key, KeyCode } from 'phaser';
 import { Vector2 } from 'ld38/primitives';
 import { PhysicsPrefab, PlayerPrefabConfig } from 'ld38/prefabs';
-import { TilemapState } from 'ld38/states';
+import { LevelState } from 'ld38/states';
 import { playerSpritesheet } from 'assets/player';
 
 export class PlayerPrefab extends PhysicsPrefab {
@@ -14,7 +15,7 @@ export class PlayerPrefab extends PhysicsPrefab {
 
   constructor(
     protected readonly config: PlayerPrefabConfig,
-    state: TilemapState,
+    protected readonly state: LevelState,
     name: string,
     position: Vector2) {
     super(config, state, name, position);
@@ -29,7 +30,8 @@ export class PlayerPrefab extends PhysicsPrefab {
 
   protected initPhysics() {
     super.initPhysics();
-    this.body.collideWorldBounds = true;
+    this.checkWorldBounds = true;
+    this.outOfBoundsKill = true;
   }
 
   update() {

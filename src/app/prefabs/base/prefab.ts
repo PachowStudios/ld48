@@ -7,7 +7,7 @@ export class Prefab extends Sprite {
   constructor(
     protected readonly config: PrefabConfig,
     protected readonly state: TilemapState,
-    name: string,
+    public readonly name: string,
     position: Vector2) {
     super(state.game, position.x, position.y, config.spritesheet.key);
     
@@ -16,5 +16,9 @@ export class Prefab extends Sprite {
 
   protected initSprite() {
     this.anchor.set(this.config.anchorX, this.config.anchorY);
+
+    if (this.config.frame != undefined) {
+      this.frame = this.config.frame;
+    }
   }
 }
